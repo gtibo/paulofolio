@@ -77,8 +77,8 @@ class="main-wrap"
   {/each}
   </div>
   <footer class="container">
-    <p>Design and development, Thibaud Goiffon</p>
-    <p>Built with <a href="https://kit.svelte.dev/" target="_blank">SvelteKit</a>.</p>
+    <p>Design and development, <a href="https://gotibo.fr/">Thibaud Goiffon</a></p>
+    <p>Built with <a href="https://kit.svelte.dev/">SvelteKit</a>.</p>
   </footer>
 </main>
 

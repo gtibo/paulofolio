@@ -1,9 +1,9 @@
 <script context="module">
   export async function load({
-    page,
+    params,
     fetch
   }) {
-    const slug = page.params.slug;
+    const slug = params.slug;
     let res = await fetch(`/projects/${slug}.json`);
     if (res.status == 404) return {
       status: 404,
@@ -82,18 +82,22 @@ out:fade={{duration:100, delay:100}}
   </div>
 
   <footer>
-        {#if project.previous_project}
-        <a sveltekit:prefetch href="/projects/{project.previous_project.slug}">
-        <div class="info" >Previous project</div>
-        <h4 class="title" >{project.previous_project.title}</h4>
-        </a>
-        {/if}
-        {#if project.next_project}
-        <a sveltekit:prefetch href="/projects/{project.next_project.slug}">
-        <div class="info" >Next project</div>
-        <h4 class="title" >{project.next_project.title}</h4>
-        </a>
-        {/if}
+  <div>
+    {#if project.previous_project}
+    <a sveltekit:prefetch href="/projects/{project.previous_project.slug}">
+    <div class="info" >Previous project</div>
+    <h4 class="title" >{project.previous_project.title}</h4>
+    </a>
+    {/if}
+  </div>
+  <div>
+    {#if project.next_project}
+    <a sveltekit:prefetch href="/projects/{project.next_project.slug}">
+    <div class="info" >Next project</div>
+    <h4 class="title" >{project.next_project.title}</h4>
+    </a>
+    {/if}
+  </div>
   </footer>
 </main>
 
@@ -158,15 +162,17 @@ footer{
   border-top:1px solid white;
 }
 
-
-footer a {
-  padding: 2em 3em;
+footer a{
   text-decoration: none;
+}
+
+footer > div {
+  padding: 2em 3em;
   flex: 1;
   transition: transform .2s ease-out;
 }
 
-footer > a:last-child{
+footer div:last-child a{
   text-align: right;
   align-items: end;
 }
@@ -181,12 +187,6 @@ footer .info{
   margin-bottom: .8em;
 }
 
-footer a:first-child:hover{
-  transform: translateX(-1em);
-}
-footer a:last-child:hover{
-  transform: translateX(1em);
-}
 
 .container{
   max-width: 1200px;
