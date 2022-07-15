@@ -50,13 +50,13 @@ out:fade={{duration:100, delay:100}}
     out:fly={{y:-100,duration:500}}
 
     style="
+      background-position:center;
       background-image:linear-gradient(transparent 0%, #0D0D0F ),url({project.vignette.formats.large});
     "
 
     >
 
     </div>
-
   </header>
   <div class="container">
     {#each project.body as element}

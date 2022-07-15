@@ -4,11 +4,11 @@ type: Computer game
 vignette: astray/astray04.jpg
 date: 2022
 credits:
-  - "Thibaud Goiffon (shaders)"
-  - "Storm Watters (voice acting)"
-  - "Marion Bareil (tutor)"
-  - "Zapsplat.com (sfx)"
-  - "Peter Höglund (shaders)"
+  - Thibaud Goiffon (shaders)
+  - Storm Watters (voice acting)
+  - Marion Bareil (tutor)
+  - Zapsplat.com (sfx)
+  - Peter Höglund (shaders)
 
 ---
 Inspired by today’s companies planning to expand their activities into space, Astray develops a short speculative story where you share the struggles of one employee coping with solitude and delusion.
@@ -16,5 +16,5 @@ You play as Vilmaya Lova, one of the many carriers working for one of those big 
 !astray/astray_trailer.mp4
 Astray is a first person adventure and narrative focused game with puzzle-oriented mechanics, developed using Godot for all computers on Windows, MacOS and Linux.
 !astray/astray01.jpg
-!astray/astray02.jpg
-!astray/astray03.jpg
+!astray/astray02.png
+!astray/astray03.png

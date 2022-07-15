@@ -14,11 +14,9 @@ let image_sizes = [{
   width: 1920
 }]
 
-
-let root_path = process.cwd();
 let to_explores = [];
 to_explores.push(
-  path.join(root_path, "static/media")
+  path.resolve("./static/media")
 );
 
 while (to_explores.length != 0) {
@@ -66,7 +64,7 @@ function set_meta(file_name, file_path, location_path) {
       meta_data.height = dimensions.height;
       meta_data.formats = {};
       // resize images
-      let resize_path = path.join(root_path, "static/media_resize")
+      let resize_path = path.resolve("./static/media_resize")
       image_sizes.forEach(new_format => {
         let format_path = file_path;
         if (meta_data.width >= new_format.width) {

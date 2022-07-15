@@ -3,11 +3,10 @@ import path from "path";
 import fm from "front-matter";
 import MarkdownIt from "markdown-it";
 let md = new MarkdownIt();
-let root_path = process.cwd();
 
 export default function get_projects() {
 
-  let project_path = path.join(root_path, "/static/content/projects/");
+  let project_path = path.resolve("./static/content/projects/");
   let project_file_list = fs.readdirSync(project_path);
   return project_file_list.map(project_file_name => {
     let content_file_path = path.join(project_path, project_file_name);
@@ -22,7 +21,7 @@ export default function get_projects() {
     } = raw_content;
 
     if (attributes.vignette) {
-      let meta_file_path = path.join(root_path, `/static/media/${attributes.vignette}_meta.json`);
+      let meta_file_path = path.resolve(`./static/media/${attributes.vignette}_meta.json`);
       attributes.vignette = get_meta(meta_file_path);
     }
 
@@ -38,7 +37,7 @@ function parse_inline_content(content) {
   return lines.map(line => {
     if (line.charAt(0) == "!") {
       let meta_file_name = line.replace("!", "") + "_meta.json",
-        meta_file_path = path.join(root_path, "/static/media/", meta_file_name);
+        meta_file_path = path.resolve("./static/media/", meta_file_name);
       return get_meta(meta_file_path);
 
     } else {
