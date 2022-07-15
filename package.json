@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite dev",
-		"build": "vite build",
-		"package": "svelte-kit package",
-		"preview": "vite preview",
-		"prepare": "svelte-kit sync",
-		"check": "svelte-check --tsconfig ./jsconfig.json",
-		"check:watch": "svelte-check --tsconfig ./jsconfig.json --watch"
+    "build": "vite build",
+    "package": "svelte-kit package",
+    "preview": "vite preview",
+    "prepare": "svelte-kit sync",
+    "check": "svelte-check --tsconfig ./jsconfig.json",
+    "check:watch": "svelte-check --tsconfig ./jsconfig.json --watch"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
